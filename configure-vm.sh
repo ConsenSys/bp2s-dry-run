@@ -34,6 +34,9 @@ done
 
 # Get Geth+IBFT source code
 git clone https://github.com/getamis/go-ethereum.git geth
+cd geth
+git checkout c7547381b2ea8999e423970d619835c662176790
+cd ..
 
 # Get utilities for creating an Ethereum wallet
 git clone https://github.com/vkobel/ethereum-generate-wallet.git
