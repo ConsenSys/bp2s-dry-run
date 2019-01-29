@@ -25,7 +25,6 @@ sudo apt-get update
 sudo apt-get -y install docker-ce
 sudo groupadd docker
 sudo usermod -aG docker $USER
-sudo su - $USER
 
 # Install docker-compose completion and alias
 sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
