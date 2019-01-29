@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  geth_node:
+    build:
+      context: ../geth
+    ports:
+      - '30303:30303'
+      - '8545:8545'
+    restart: always
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        geth \
+        --identity ${GETH_IDENTITY} \
+        --rpc \
+        --rpcaddr "0.0.0.0" \
+        --rpcport "8545" \
+        --rpccorsdomain "*" \
+        --datadir "/nodeData/eth" \
+        --port "30303" \
+        --rpcapi "admin,eth,net,web3,personal,istanbul,txpool" \
+        --networkid 23977 \
+        --targetgaslimit '9000000000' \
+        --gasprice "1000000000" \
+        --nodiscover \
+        --nodekey "/nodeData/eth/nodekey" \
+        --mine \
+        --istanbul.blockperiod "3" \
+        --debug \
+        --ipcdisable \
+        --syncmode "full"
+    volumes:
+      - ./eth:/nodeData/eth
