@@ -30,12 +30,3 @@ sudo usermod -aG docker $USER
 sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
-
-while true; do
-    read -p "Do you wish to add alias doco=docker-compose? [y/n]" yn
-    case $yn in
-        [Yy]* ) echo -e '\nalias doco=docker-compose\ncomplete -F _docker_compose doco' >> ~/.bashrc; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
