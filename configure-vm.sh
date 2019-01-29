@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# Get Geth+IBFT source code
+git clone https://github.com/getamis/go-ethereum.git geth
+cd geth
+git checkout c7547381b2ea8999e423970d619835c662176790
+cd ..
+
+# Get utilities for creating an Ethereum wallet
+git clone https://github.com/vkobel/ethereum-generate-wallet.git
+
 # Install docker
 sudo apt-get -y remove docker docker-engine docker.io
 sudo apt-get -y install \
@@ -31,12 +40,3 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-
-# Get Geth+IBFT source code
-git clone https://github.com/getamis/go-ethereum.git geth
-cd geth
-git checkout c7547381b2ea8999e423970d619835c662176790
-cd ..
-
-# Get utilities for creating an Ethereum wallet
-git clone https://github.com/vkobel/ethereum-generate-wallet.git
