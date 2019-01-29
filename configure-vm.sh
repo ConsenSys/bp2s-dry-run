@@ -31,3 +31,9 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
+
+# Get Geth+IBFT source code
+git clone https://github.com/getamis/go-ethereum.git geth
+
+# Get utilities for creating an Ethereum wallet
+git clone https://github.com/vkobel/ethereum-generate-wallet.git
