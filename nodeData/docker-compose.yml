@@ -12,6 +12,7 @@ services:
       - /bin/sh
       - -c
       - |
+        geth --datadir "/nodeData/eth" init "/nodeData/eth/genesis.json"
         geth \
         --identity ${GETH_IDENTITY} \
         --rpc \
